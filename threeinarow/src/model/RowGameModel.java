@@ -1,8 +1,8 @@
 package model;
 
 
-public class RowGameModel 
-{
+import logger.Logger;
+public class RowGameModel {
     public static final String GAME_END_NOWINNER = "Game ends in a draw";
 
     public RowBlockModel[][] blocksData = new RowBlockModel[3][3];
@@ -17,20 +17,21 @@ public class RowGameModel
 
 
     public RowGameModel() {
-	super();
+        super();
 
-	for (int row = 0; row < 3; row++) {
-	    for (int col = 0; col < 3; col++) {
-		blocksData[row][col] = new RowBlockModel(this);
-	    } // end for col
-	} // end for row
+        for (int row = 0; row < 3; row++) {
+            for (int col = 0; col < 3; col++) {
+                blocksData[row][col] = new RowBlockModel(this);
+            } // end for col
+        } // end for row
     }
 
     public String getFinalResult() {
-	return this.finalResult;
+        return this.finalResult;
     }
 
     public void setFinalResult(String finalResult) {
-	this.finalResult = finalResult;
+        this.finalResult = finalResult;
+        Logger.log("manipulates");
     }
 }
